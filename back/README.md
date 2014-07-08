@@ -14,6 +14,8 @@ Thanks.
 
 NOTE
 ----
+
+这是wp
 The master branch will always contain the latest stable version. If you wish
 to check older versions or newer ones currently under development, please
 switch to the relevant branch.
