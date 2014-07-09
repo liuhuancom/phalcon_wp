@@ -51,6 +51,7 @@ class Security extends Plugin
 				'index' => array('index'),
 				'about' => array('index'),
 				'session' => array('index', 'register', 'start', 'end'),
+                'admin' => array('index', 'register', 'start', 'end'),
 				'contact' => array('index', 'send')
 			);
 			foreach ($publicResources as $resource => $actions) {

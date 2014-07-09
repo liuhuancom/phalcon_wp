@@ -136,6 +136,10 @@ try {
 		return new Elements();
 	});
 
+    $di->set('katniss', function(){
+        return new Katniss();
+    });
+
 	$application = new \Phalcon\Mvc\Application();
 	$application->setDI($di);
 	echo $application->handle()->getContent();
