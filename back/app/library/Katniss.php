@@ -28,7 +28,7 @@ class Katniss extends Phalcon\Mvc\User\Component
             ),
         ),
         'pull-right' => array(
-            'session' => array(
+            'admin' => array(
                 'caption' => 'Log In/Sign Up',
                 'action' => 'index'
             ),
@@ -73,7 +73,7 @@ class Katniss extends Phalcon\Mvc\User\Component
 
         $auth = $this->session->get('auth');
         if ($auth) {
-            $this->_headerMenu['pull-right']['session'] = array(
+            $this->_headerMenu['pull-right']['admin'] = array(
                 'caption' => 'Log Out',
                 'action' => 'end'
             );
