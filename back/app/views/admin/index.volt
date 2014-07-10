@@ -42,7 +42,7 @@
             </ul>
 
             <div class="clearfix center">
-                {{ link_to('session/register', 'Sign Up', 'class': 'btn btn-primary btn-large btn-success') }}
+                {{ link_to('admin/register', 'Sign Up', 'class': 'btn btn-primary btn-large btn-success') }}
             </div>
         </div>
 

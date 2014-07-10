@@ -67,8 +67,10 @@ class AdminController extends ControllerBase
     private function _registerSession($user)
     {
         $this->session->set('auth', array(
-            'id' => $user->id,
-            'name' => $user->name
+            //'id' => $user->id,
+            //'name' => $user->name
+            'id' => $user->ID,
+            'name' => $user->user_login
         ));
     }
 
@@ -84,7 +86,9 @@ class AdminController extends ControllerBase
             $password = $this->request->getPost('password');
             $password = sha1($password);
 
-            $user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
+            //$user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
+            //wp的数据表
+            $user = WpUsers::findFirst("user_email='$email' AND user_pass='$password'");
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Welcome ' . $user->name);
@@ -92,7 +96,9 @@ class AdminController extends ControllerBase
             }
 
             $username = $this->request->getPost('email', 'alphanum');
-            $user = Users::findFirst("username='$username' AND password='$password' AND active='Y'");
+            //$user = Users::findFirst("username='$username' AND password='$password' AND active='Y'");
+
+            $user = WpUsers::findFirst("user_login='$username' AND user_pass='$password'");
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Welcome ' . $user->name);
@@ -102,7 +108,7 @@ class AdminController extends ControllerBase
             $this->flash->error('Wrong email/password');
         }
 
-        return $this->forward('session/index');
+        return $this->forward('admin/index');
     }
 
     /**
@@ -116,4 +122,19 @@ class AdminController extends ControllerBase
         $this->flash->success('Goodbye!');
         return $this->forward('index/index');
     }
+
+    /**
+     * 测试
+     *
+     */
+
+    public function testAction()
+    {
+        $mod = WpUsers::findFirst(1);
+        //var_dump($mod) ;
+        echo $mod->user_login;
+    }
+
+
+
 }

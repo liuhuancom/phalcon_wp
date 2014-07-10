@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f9a52ed-9929-41ab-9f6e-ebfb0ad797ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back/public/webtools.config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back/public/webtools.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/library/Katniss.php" afterPath="$PROJECT_DIR$/back/app/library/Katniss.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back/app/models/WpUsers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/back/app/controllers/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/models/Users.php" afterPath="$PROJECT_DIR$/back/app/models/Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/config/config.ini" afterPath="$PROJECT_DIR$/back/app/config/config.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/public/index.php" afterPath="$PROJECT_DIR$/back/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/views/admin/index.volt" afterPath="$PROJECT_DIR$/back/app/views/admin/index.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git.iws" />
@@ -28,19 +31,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.ini" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/app/config/config.ini">
+      <file leaf-file-name="AdminController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/back/app/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+            <state line="105" column="13" selection-start="3535" selection-end="3535" vertical-scroll-proportion="1.3167082" vertical-offset="1782" max-vertical-offset="3212">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/back/app/controllers/AdminController.php">
+      <file leaf-file-name="Users.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/app/models/Users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="-0.16372795" vertical-offset="2089" max-vertical-offset="2750">
+            <state line="6" column="1" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.0" vertical-offset="132" max-vertical-offset="880">
+              <folding>
+                <element signature="e#7#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WpUsers.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/app/models/WpUsers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="18" selection-start="921" selection-end="921" vertical-scroll-proportion="-4.2580647" vertical-offset="792" max-vertical-offset="2090">
+              <folding>
+                <element signature="e#7#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.volt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/app/views/admin/register.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="6" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.volt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/app/views/admin/index.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="18" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1232">
               <folding />
             </state>
           </provider>
@@ -58,7 +92,7 @@
       <file leaf-file-name="admin.volt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/app/views/layouts/admin.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="10" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+            <state line="6" column="46" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
               <folding />
             </state>
           </provider>
@@ -67,7 +101,7 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="23" selection-start="3268" selection-end="3268" vertical-scroll-proportion="-7.096774" vertical-offset="2838" max-vertical-offset="3432">
+            <state line="156" column="3" selection-start="3580" selection-end="3580" vertical-scroll-proportion="-8.67742" vertical-offset="3163" max-vertical-offset="3564">
               <folding />
             </state>
           </provider>
@@ -77,15 +111,6 @@
         <entry file="file://$PROJECT_DIR$/back/app/library/Elements.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="2" selection-start="25" selection-end="25" vertical-scroll-proportion="65.29032" vertical-offset="2112" max-vertical-offset="2706">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Security.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/app/plugins/Security.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="35" selection-start="1270" selection-end="1270" vertical-scroll-proportion="-27.67742" vertical-offset="198" max-vertical-offset="2640">
               <folding />
             </state>
           </provider>
@@ -105,23 +130,25 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/back/README.md" />
-        <option value="$PROJECT_DIR$/back/app/config/config.ini" />
         <option value="$PROJECT_DIR$/back/app/plugins/Security.php" />
-        <option value="$PROJECT_DIR$/back/app/views/admin/index.volt" />
         <option value="$PROJECT_DIR$/back/app/views/katniss.volt" />
-        <option value="$PROJECT_DIR$/back/app/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/back/app/views/layouts/admin.volt" />
-        <option value="$PROJECT_DIR$/back/public/index.php" />
         <option value="$PROJECT_DIR$/back/app/library/Katniss.php" />
+        <option value="$PROJECT_DIR$/back/app/views/admin/index.volt" />
+        <option value="$PROJECT_DIR$/back/app/models/Users.php" />
+        <option value="$PROJECT_DIR$/back/app/config/config.ini" />
+        <option value="$PROJECT_DIR$/back/app/models/WpUsers.php" />
+        <option value="$PROJECT_DIR$/back/public/index.php" />
+        <option value="$PROJECT_DIR$/back/app/controllers/AdminController.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="200" />
+    <option name="x" value="9" />
+    <option name="y" value="171" />
     <option name="width" value="1367" />
-    <option name="height" value="640" />
+    <option name="height" value="644" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -309,6 +336,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="back" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -342,11 +391,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../cms/wp/wordpress" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\www\xamp\htdocs\php\phalcon\invowp2.0\git\back\app\models" />
       <recent name="E:\www\xamp\htdocs\php\phalcon\invowp2.0\git\back\app\library" />
       <recent name="E:\www\xamp\htdocs\php\phalcon\invowp2.0\git\back\app\views" />
       <recent name="E:\www\xamp\htdocs\php\phalcon\invowp2.0\git\back\app\views\layouts" />
@@ -405,22 +455,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="200" width="1367" height="640" extended-state="0" />
-    <editor active="false" />
+    <frame x="9" y="171" width="1367" height="644" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23904689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23904689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -485,23 +535,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/config/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/views/admin/index.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2" selection-start="139" selection-end="139" vertical-scroll-proportion="0.41121495" vertical-offset="0" max-vertical-offset="1232">
           <folding />
         </state>
       </provider>
@@ -520,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="23" selection-start="3268" selection-end="3268" vertical-scroll-proportion="-7.096774" vertical-offset="2838" max-vertical-offset="3432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/library/Katniss.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="32" selection-start="998" selection-end="998" vertical-scroll-proportion="0.88916874" vertical-offset="527" max-vertical-offset="2706">
@@ -536,14 +565,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/layouts/admin.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="10" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+        <state line="6" column="46" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/views/admin/register.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/views/admin/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1232">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/Companies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="7" selection-start="86" selection-end="86" vertical-scroll-proportion="0.3188406" vertical-offset="0" max-vertical-offset="792">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="16" selection-start="372" selection-end="372" vertical-scroll-proportion="0.84044945" vertical-offset="0" max-vertical-offset="528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="1" selection-start="171" selection-end="171" vertical-scroll-proportion="-0.0" vertical-offset="132" max-vertical-offset="880">
+          <folding>
+            <element signature="e#7#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="18" selection-start="921" selection-end="921" vertical-scroll-proportion="-4.2580647" vertical-offset="792" max-vertical-offset="2090">
+          <folding>
+            <element signature="e#7#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="3" selection-start="3580" selection-end="3580" vertical-scroll-proportion="-8.67742" vertical-offset="3163" max-vertical-offset="3564">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="0" selection-start="2863" selection-end="2863" vertical-scroll-proportion="-0.16372795" vertical-offset="2089" max-vertical-offset="2750">
+        <state line="105" column="13" selection-start="3535" selection-end="3535" vertical-scroll-proportion="1.3167082" vertical-offset="1782" max-vertical-offset="3212">
           <folding />
         </state>
       </provider>
