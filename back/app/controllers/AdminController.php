@@ -146,7 +146,7 @@ class AdminController extends ControllerBase
     {
         $this->session->remove('auth');
         $this->flash->success('Goodbye!');
-        return $this->forward('index/index');
+        return $this->forward('admin/login');
     }
 
     /**

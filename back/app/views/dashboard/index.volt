@@ -16,9 +16,9 @@
                         <li>
                         	<a href="">
                         	<strong>3 people viewed your profile</strong><br />
-                            <img src="img/thumbs/thumb1.png" alt="" />
-                            <img src="img/thumbs/thumb2.png" alt="" />
-                            <img src="img/thumbs/thumb3.png" alt="" />
+                            <img src="{{url('')}}img/thumbs/thumb1.png" alt="" />
+                            <img src="{{url('')}}img/thumbs/thumb2.png" alt="" />
+                            <img src="{{url('')}}img/thumbs/thumb3.png" alt="" />
                             </a>
                         </li>
                         <li><a href=""><span class="icon-envelope"></span> New message from <strong>Jack</strong> <small class="muted"> - 19 hours ago</small></a></li>
@@ -35,7 +35,7 @@
                         <li><a href=""><span class="icon-wrench"></span> Account Settings</a></li>
                         <li><a href=""><span class="icon-eye-open"></span> Privacy Settings</a></li>
                         <li class="divider"></li>
-                        <li><a href="index.html"><span class="icon-off"></span> Sign Out</a></li>
+                        <li><a href="{{ url('admin/end') }}"><span class="icon-off"></span> Sign Out</a></li>
                     </ul>
                 </div><!--dropdown-->
 
@@ -63,7 +63,13 @@
         <div class="maincontent">
         	<div class="contentinner content-dashboard">
 
+
+
                 {{content()}}
+
+
+
+
             	<div class="alert alert-info">
                 	<button type="button" class="close" data-dismiss="alert">×</button>
 

@@ -17,6 +17,9 @@ class DashboardController extends ControllerBase
     public function indexAction()
     {
         //$this->view->pick("admin/admin");
+        $time = time();
+        $date = date('Y-m-d h:i a l');
+        $this->view->setVar("date",$date);
 
     }
 

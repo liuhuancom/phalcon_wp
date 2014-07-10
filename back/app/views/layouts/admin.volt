@@ -10,7 +10,7 @@
         	<h1><a href="dashboard.html">Katniss <span>v1.0</span></a></h1>
         </div><!--logopanel-->
 
-        <div class="datewidget">Today is Tuesday, Dec 25, 2012 5:30pm</div>
+        <div class="datewidget">今天是 {{ date }}</div>
 
     	<div class="searchwidget">
         	<form action="results.html" method="post">
@@ -34,10 +34,12 @@
             	<li class="nav-header">Main Navigation</li>
                 <li class="active"><a href="{{ url("dashboard/index") }}"><span class="icon-align-justify"></span> Dashboard</a></li>
                 <li><a href="media.html"><span class="icon-picture"></span> Media</a></li>
-                <li class="dropdown"><a href=""><span class="icon-briefcase"></span> UI Elements &amp; Widgets</a>
+                <li class="dropdown"><a href=""><span class="icon-briefcase"></span>文章管理</a>
                 	<ul>
-                    	<li><a href="elements.html">Theme Components</a></li>
-                        <li><a href="bootstrap.html">Bootstrap Components</a></li>
+                    	<li><a href="elements.html">所有文章</a></li>
+                        <li><a href="bootstrap.html">写文章</a></li>
+                        <li><a href="bootstrap.html">分类目录</a></li>
+                        <li><a href="bootstrap.html">标签</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href=""><span class="icon-th-list"></span> Tables</a>
