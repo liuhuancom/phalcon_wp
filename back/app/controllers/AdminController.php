@@ -1,6 +1,7 @@
 <?php
 
-use Phalcon\Tag as Tag;
+use Phalcon\Tag as Tag,
+    Phalcon\Mvc\View;
 
 class AdminController extends ControllerBase
 {
@@ -16,11 +17,33 @@ class AdminController extends ControllerBase
 
     public function indexAction()
     {
+
+
+
         if (!$this->request->isPost()) {
             Tag::setDefault('email', 'demo@phalconphp.com');
             Tag::setDefault('password', 'phalcon');
         }
         echo 'a';
+    }
+
+    public function loginAction()
+    {
+        //$this->view->disable();
+        //$this->view->setMainView('');
+        //Tag::setTitle('Sign In');
+        $this->view->setLayout('login');
+        //$this->view->disableLevel(View::LEVEL_LAYOUT);
+        if (!$this->request->isPost()) {
+            Tag::setDefault('email', 'demo@phalconphp.com');
+            Tag::setDefault('password', 'phalcon');
+        }
+
+        //$this->flash->success('Hello! Sign in to get you started!' );
+        //$this->flashSession->success("Your information was stored correctly!");
+
+
+        //echo 'a';
     }
 
     public function registerAction()
@@ -39,13 +62,13 @@ class AdminController extends ControllerBase
                 return false;
             }
 
-            $user = new Users();
-            $user->username = $username;
-            $user->password = sha1($password);
-            $user->name = $name;
-            $user->email = $email;
-            $user->created_at = new Phalcon\Db\RawValue('now()');
-            $user->active = 'Y';
+            $user = new WpUsers();
+            $user->user_login = $username;
+            $user->user_pass = sha1($password);
+            $user->user_nicename = $name;
+            $user->user_email = $email;
+            $user->user_registered = new Phalcon\Db\RawValue('now()');
+            $user->user_status = 0;
             if ($user->save() == false) {
                 foreach ($user->getMessages() as $message) {
                     $this->flash->error((string) $message);
@@ -53,8 +76,9 @@ class AdminController extends ControllerBase
             } else {
                 Tag::setDefault('email', '');
                 Tag::setDefault('password', '');
+
                 $this->flash->success('Thanks for sign-up, please log-in to start generating invoices');
-                return $this->forward('session/index');
+                return $this->forward('admin/index');
             }
         }
     }
@@ -88,27 +112,29 @@ class AdminController extends ControllerBase
 
             //$user = Users::findFirst("email='$email' AND password='$password' AND active='Y'");
             //wp的数据表
-            $user = WpUsers::findFirst("user_email='$email' AND user_pass='$password'");
+            $user = WpUsers::findFirst("user_email='$email' AND user_pass='$password' AND user_status=0");
             if ($user != false) {
                 $this->_registerSession($user);
-                $this->flash->success('Welcome ' . $user->name);
-                return $this->forward('invoices/index');
+                $this->flash->success('Welcome ' . $user->user_login.'<button type="button" class="close" data-dismiss="alert">×</button>');
+                //return $this->forward('invoices/index');
+                return $this->forward('dashboard/index');
             }
 
             $username = $this->request->getPost('email', 'alphanum');
             //$user = Users::findFirst("username='$username' AND password='$password' AND active='Y'");
 
-            $user = WpUsers::findFirst("user_login='$username' AND user_pass='$password'");
+            $user = WpUsers::findFirst("user_login='$username' AND user_pass='$password' AND user_status=0");
             if ($user != false) {
                 $this->_registerSession($user);
                 $this->flash->success('Welcome ' . $user->name);
-                return $this->forward('invoices/index');
+                //return $this->forward('invoices/index');
+                return $this->forward('dashboard/index');
             }
 
-            $this->flash->error('Wrong email/password');
+            $this->flash->error('好像有哪里不对啊');
         }
 
-        return $this->forward('admin/index');
+        return $this->forward('admin/login');
     }
 
     /**

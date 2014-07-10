@@ -114,4 +114,16 @@ class Katniss extends Phalcon\Mvc\User\Component
         }
         echo '</ul>';
     }
+
+    public function getUser()
+    {
+        $auth = $this->session->get('auth');
+        echo $auth['name'];
+    }
+
+
+
+
+
+
 }
