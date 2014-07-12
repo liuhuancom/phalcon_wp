@@ -23,6 +23,8 @@
         {{ javascript_include('js/jquery.cookie.js') }}
         {{ javascript_include('js/custom.js') }}
 
+
+
         <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
 
 

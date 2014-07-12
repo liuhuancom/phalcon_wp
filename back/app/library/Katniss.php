@@ -121,6 +121,12 @@ class Katniss extends Phalcon\Mvc\User\Component
         echo $auth['name'];
     }
 
+    public function getDate()
+    {
+        $date = date('Y-m-d h:i a l');
+        echo $date;
+    }
+
 
 
 

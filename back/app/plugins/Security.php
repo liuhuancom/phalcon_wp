@@ -41,7 +41,8 @@ class Security extends Plugin
 				'products' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'invoices' => array('index', 'profile'),
-                'dashboard' => array('index', 'profile')
+                'dashboard' => array('index', 'profile'),
+                'post' => array('index', 'show', 'new', 'new2', 'newpost', 'tmppost', 'category', 'tag', 'file')
 			);
 			foreach ($privateResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -100,11 +101,11 @@ class Security extends Plugin
 
 		$allowed = $acl->isAllowed($role, $controller, $action);
 		if ($allowed != Acl::ALLOW) {
-			$this->flash->error("You don't have access to this module");
+			$this->flash->error("你还未登录");
 			$dispatcher->forward(
 				array(
-					'controller' => 'index',
-					'action' => 'index'
+					'controller' => 'admin',
+					'action' => 'login'
 				)
 			);
 			return false;
