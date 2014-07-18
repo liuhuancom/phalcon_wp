@@ -30,7 +30,23 @@ class PostController extends ControllerBase
 
     public function showAction()
     {
+
         Tag::appendTitle(' | 所有文章 ');
+        $this->assets->collection('post_show')
+            ->addJs('js/jquery.dataTables.min.js')
+            ->addJs('js/jquery-migrate-1.1.1.min.js')
+            ->addJs('js/jquery.uniform.min.js');
+
+        $posts = WpPosts::find("post_status='publish'");
+        //$posts = WpPosts::findFirst();
+        $this->view->posts = $posts;
+        //echo var_dump($posts);
+
+
+
+
+
+
 
         echo 'a';
     }
@@ -103,6 +119,7 @@ class PostController extends ControllerBase
         }
     }
 
+    //写文章
     public function newpostAction()
     {
         echo 'ok';
@@ -114,27 +131,28 @@ class PostController extends ControllerBase
             $newpost->post_title = $title;
             $newpost->post_content = $content;
             $newpost->post_content_filtered = 'a';
-            $newpost->post_date = '2014-06-27 18:36:58.000000';
-            $newpost->post_date_gmt = '2014-06-27 18:36:58.000000';
-            $newpost->post_excerpt = 'a';
+            //$newpost->post_date = '2014-06-27 18:36:58.000000';
+            $newpost->post_date = date('Y-m-d H:i:s');
+            $newpost->post_date_gmt = date('Y-m-d H:i:s');
+            $newpost->post_excerpt = ' ';
 
-            $newpost->post_modified = '2014-06-27 18:36:58.000000';
-            $newpost->post_modified_gmt = '2014-06-27 18:36:58.000000';
-            $newpost->post_name = 'a';
-            $newpost->post_password = 'a';
-            $newpost->post_status = 'a';
+            $newpost->post_modified = date('Y-m-d H:i:s');
+            $newpost->post_modified_gmt = date('Y-m-d H:i:s');
+            $newpost->post_name = $title;
+            $newpost->post_password = new Phalcon\Db\RawValue("''");
+            $newpost->post_status = 'publish';
             $newpost->comment_count = 0;
-            $newpost->comment_status = 'aa';
-            $newpost->post_author = '0';
-            $newpost->ping_status = 'aa';
-            $newpost->to_ping = 'aa';
-            $newpost->pinged = 'aa';
-            $newpost->post_content_filtered = 'aa';
+            $newpost->comment_status = 'open';  //open
+            $newpost->post_author = '1';        //1
+            $newpost->ping_status = 'open';
+            $newpost->to_ping = ' ';
+            $newpost->pinged = ' ';
+            $newpost->post_content_filtered = ' ';
             $newpost->post_parent = '0';
             $newpost->guid = 'aa';
-            $newpost->menu_order = '4';
-            $newpost->post_type = 'a';
-            $newpost->post_mime_type = 'a';
+            $newpost->menu_order = '0';         //0
+            $newpost->post_type = 'post';
+            $newpost->post_mime_type = ' ';
 
 
 
