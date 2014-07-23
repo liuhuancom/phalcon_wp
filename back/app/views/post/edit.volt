@@ -64,6 +64,9 @@
 
 
 
+
+
+
         <div class="maincontent">
                 	<div class="contentinner content-elements">
 
@@ -73,7 +76,8 @@
 
                     	    {# <form action="post/newpost" method="post"> #}
 
-                    	    {{ form("post/newpost", "method":"post") }}
+                    	    {{ form("post/save", "method":"post") }}
+
 
 
 
@@ -102,6 +106,7 @@
 
 
                                 {{ text_area('post_content', 'class':'ckeditor') }}
+                                {{ hidden_field("id") }}
 
 
                                 <br/>
@@ -129,7 +134,7 @@
                                         </div>
                                         <div id="tabs-3">
                                             Your content goes here for tab 3
-                                             {{ text_field('setde', 'size': "30", 'class': "input-xlarge") }}
+
 
                                         </div>
                                     </div><!--#tabs-->

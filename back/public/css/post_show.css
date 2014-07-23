@@ -1,0 +1,12 @@
+
+
+ tr:hover .row-actions {
+visibility: visible;
+}
+
+
+.row-actions{
+	visibility: hidden;
+}
+
+

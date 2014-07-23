@@ -64,6 +64,9 @@
 
 
 
+
+{{ content() }}
+
         <div class="maincontent">
                 	<div class="contentinner content-elements">
 
