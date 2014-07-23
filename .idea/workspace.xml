@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9a52ed-9929-41ab-9f6e-ebfb0ad797ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/controllers/PostController.php" afterPath="$PROJECT_DIR$/back/app/controllers/PostController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/plugins/Security.php" afterPath="$PROJECT_DIR$/back/app/plugins/Security.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/views/post/show.volt" afterPath="$PROJECT_DIR$/back/app/views/post/show.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +47,7 @@
       <file leaf-file-name="PostController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/app/controllers/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="9" selection-start="3516" selection-end="3516" vertical-scroll-proportion="-4.709677" vertical-offset="2560" max-vertical-offset="8118">
+            <state line="51" column="40" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-6.83871" vertical-offset="910" max-vertical-offset="8756">
               <folding />
             </state>
           </provider>
@@ -88,7 +86,7 @@
       <file leaf-file-name="show.volt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/app/views/post/show.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="0" selection-start="5287" selection-end="5287" vertical-scroll-proportion="0.33534744" vertical-offset="2419" max-vertical-offset="4070">
+            <state line="143" column="33" selection-start="7205" selection-end="7205" vertical-scroll-proportion="0.4018127" vertical-offset="3013" max-vertical-offset="4488">
               <folding />
             </state>
           </provider>
@@ -815,14 +813,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/controllers/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="9" selection-start="3516" selection-end="3516" vertical-scroll-proportion="-4.709677" vertical-offset="2560" max-vertical-offset="8118">
+        <state line="51" column="40" selection-start="1565" selection-end="1565" vertical-scroll-proportion="-6.83871" vertical-offset="910" max-vertical-offset="8756">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/post/show.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="0" selection-start="5287" selection-end="5287" vertical-scroll-proportion="0.33534744" vertical-offset="2419" max-vertical-offset="4070">
+        <state line="143" column="33" selection-start="7205" selection-end="7205" vertical-scroll-proportion="0.4018127" vertical-offset="3013" max-vertical-offset="4488">
           <folding />
         </state>
       </provider>

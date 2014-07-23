@@ -28,6 +28,7 @@ class PostController extends ControllerBase
 
     }
 
+    //edit.php?post_status=trash&post_type=post
     public function showAction()
     {
 
@@ -39,10 +40,38 @@ class PostController extends ControllerBase
         $this->assets->collection('post_show')
              ->addCss('css/post_show.css');
 
-        $posts = WpPosts::find("post_status='publish' and post_type='post'");
+        $post_status = $this->request->getQuery('post_status');
+        echo $post_status;
+        if($post_status == 'publish'){
+            $posts = WpPosts::find("post_status='publish' and post_type='post'");
+            //$posts = WpPosts::findFirst();
+            $this->view->posts = $posts;
+        }elseif($post_status == 'trash'){
+            $posts = WpPosts::find("post_status='trash' and post_type='post'");
+            //$posts = WpPosts::findFirst();
+            $this->view->posts = $posts;
+            $this->view->action = 'trash';
+        }elseif($post_status == 'private'){
+            $posts = WpPosts::find("post_status='private' and post_type='post'");
+            //$posts = WpPosts::findFirst();
+            $this->view->posts = $posts;
+        }
+
+
+        /*$posts = WpPosts::find("post_status='publish' and post_type='post'");
         //$posts = WpPosts::findFirst();
-        $this->view->posts = $posts;
+        $this->view->posts = $posts;*/
         //echo var_dump($posts);
+        echo 'aa';
+        $publish = WpPosts::count("post_status = 'publish'");
+        $trash = WpPosts::count("post_status = 'trash'");
+        $private = WpPosts::count("post_status = 'private'");
+        $this->view->setVar('publish', $publish);
+        $this->view->setVar('trash',$trash);
+        $this->view->setVar('private',$private);
+
+        echo $trash;
+
 
 
     }
