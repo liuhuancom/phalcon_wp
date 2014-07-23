@@ -122,11 +122,10 @@
                             <td>{{ post.post_title }}
                                 <div class="row-actions">
                                  <span class="edit">
-                                    {{ link_to("post/edit/"~post.ID, "编辑") }}
-                                    <a href="http://localhost/cms/wp/wordpress/wp-admin/post.php?post=118&amp;action=edit" title="编辑此项目">编辑</a> | </span>
-                                    <span class="inline hide-if-no-js"><a href="#" class="editinline" title="实时编辑此项目">快速编辑</a> | </span>
+                                    {{ link_to("post/edit/"~post.ID, "编辑") }} | </span>
+
                                     <span class="trash"><a class="submitdelete" title="移动此项目到回收站" href="http://localhost/cms/wp/wordpress/wp-admin/post.php?post=118&amp;action=trash&amp;_wpnonce=8f5f2768a8">回收站</a> | </span>
-                                    <span class="view"><a href="http://localhost/cms/wp/wordpress/?p=118" title="查看“大师傅”" rel="permalink">查看</a></span>
+                                    <span class="view">{{ link_to("post/see/"~post.ID, "查看","target":"_blank") }}</span>
                                 </div>
 
                             </td>
@@ -176,11 +175,6 @@
 
 
 
-{% for post in posts %}
-{{ post.post_title }}
-
-
-{% endfor %}
 
 
     <!-- END OF RIGHT PANEL -->

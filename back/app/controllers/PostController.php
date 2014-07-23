@@ -108,8 +108,31 @@ class PostController extends ControllerBase
 
         $post->post_title = $this->request->getPost("post_title");
         $post->post_content = $this->request->getPost("post_content");
-        $post->year = $this->request->getPost("year");
-        $post->post_password = new Phalcon\Db\RawValue("''");
+        //$post->year = $this->request->getPost("year");
+        //$post->post_password = new Phalcon\Db\RawValue("''");
+        if($post->post_password == ''){
+            $post->post_password = new Phalcon\Db\RawValue("''");
+        }
+        if($post->post_excerpt == ''){
+            $post->post_excerpt = new Phalcon\Db\RawValue("''");
+        }
+        if($post->to_ping  == ''){
+            $post->to_ping  = new Phalcon\Db\RawValue("''");
+        }
+        if($post->pinged == ''){
+            $post->pinged = new Phalcon\Db\RawValue("''");
+        }
+        if($post->post_content_filtered  == ''){
+            $post->post_content_filtered  = new Phalcon\Db\RawValue("''");
+        }
+        if($post->post_mime_type == ''){
+            $post->post_mime_type = new Phalcon\Db\RawValue("''");
+        }
+
+
+
+
+
 
 
         if (!$post->update()) {
@@ -131,6 +154,38 @@ class PostController extends ControllerBase
             "controller" => "post",
             "action" => "show"
         ));
+
+    }
+
+    //文章查看
+    public function seeAction($id)
+    {
+        $this->view->setLayout('');
+        $this->view->setMainView('');
+        Tag::appendTitle(' | 查看文章');
+
+
+        if (!$this->request->isPost()) {
+
+            $post = WpPosts::findFirst($id);
+            if (!$post) {
+                $this->flash->error("没有这个文章");
+
+                return $this->dispatcher->forward(array(
+                    "controller" => "post",
+                    "action" => "show"
+                ));
+            }
+
+            //echo $post->post_title;
+            foreach($post as $key=>$value){
+                echo $key.'=>'.$value.'<hr/>';
+            }
+
+
+
+        }
+
 
     }
 
