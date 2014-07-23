@@ -76,10 +76,10 @@
             	<h4 class="widgettitle">Dynamic Table</h4>
 
             	<div class="btn-group">
-                    <a class="btn" href="{{ url("post/show/post?post_status=publish&post_type=post") }}">全部 ({{publish}})</a>
-                    <a class="btn" href="{{ url("post/show/post?post_status=publish&post_type=post") }}">发布 ({{publish}})</a>
-                    <a class="btn" href="{{ url("post/show/post?post_status=trash&post_type=post") }}">回收站 ({{ trash }})</a>
-                    <a class="btn" href="{{ url("post/show/post?post_status=private&post_type=post") }}">私有 ({{ private }})</a>
+                    <a class="btn" href="{{ url("post/show?post_status=publish&post_type=post") }}">全部 ({{publish}})</a>
+                    <a class="btn" href="{{ url("post/show?post_status=publish&post_type=post") }}">发布 ({{publish}})</a>
+                    <a class="btn" href="{{ url("post/show?post_status=trash&post_type=post") }}">回收站 ({{ trash }})</a>
+                    <a class="btn" href="{{ url("post/show?post_status=private&post_type=post") }}">私有 ({{ private }})</a>
                     <button class="btn"><i class="iconfa-play"></i></button>
                     <button class="btn"><i class="iconfa-forward"></i></button>
                     <button class="btn"><i class="iconfa-fast-forward"></i></button>
@@ -108,17 +108,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="gradeX">
-                          <td class="aligncenter"><span class="center">
-                            <input type="checkbox" />
-                          </span></td>
-                            <td>Trident</td>
-                            <td>Trident</td>
-                            <td>Internet Explorer 4.0</td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
+                        
 
 
 
@@ -137,21 +127,21 @@
                                  <span class="edit">
                                     {{ link_to("post/edit/"~post.ID, "编辑") }} | </span>
 
-                                    <span class="trash"><a class="submitdelete" title="移动此项目到回收站" href="http://localhost/cms/wp/wordpress/wp-admin/post.php?post=118&amp;action=trash&amp;_wpnonce=8f5f2768a8">回收站</a> | </span>
+                                    <span class="trash"><a class="submitdelete" title="移动此项目到回收站" href="{{ url('post/edit/'~post.ID~'?action=trash') }}">回收站</a> | </span>
                                     <span class="view">{{ link_to("post/see/"~post.ID, "查看","target":"_blank") }}</span>
 
                                 {% elseif action == 'trash' %}
-                                 
-                                 <span class="view">{{ link_to("post/see/"~post.ID, "还原") }} | </span>
-                                 <span class="view">{{ link_to("post/see/"~post.ID, "永久删除") }}</span>
+
+                                 <span class="view">{{ link_to('post/edit/'~post.ID~'?action=untrash', "还原") }} | </span>
+                                 <span class="view">{{ link_to('post/edit/'~post.ID~'?action=delete', "永久删除") }}</span>
                                 {% endif %}
                                 </div>
 
                             </td>
-                            <td>Internet Explorer 5.0</td>
-                            <td>Win 95+</td>
+                            <td>admin</td>
+                            <td>未分类</td>
+                            <td class="center"></td>
                             <td class="center">{{post.post_date}}</td>
-                            <td class="center">C</td>
                         </tr>
                         {% endfor %}
 
@@ -170,6 +160,7 @@
                             <td class="center">-</td>
                             <td class="center">A</td>
                         </tr>
+
                     </tbody>
                 </table>
 

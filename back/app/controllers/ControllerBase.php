@@ -14,6 +14,7 @@ class ControllerBase extends Phalcon\Mvc\Controller
     		array(
     			'controller' => $uriParts[0], 
     			'action' => $uriParts[1]
+    			//'params' => $uriParts[2]
     		)
     	);
     }

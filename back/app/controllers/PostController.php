@@ -28,6 +28,7 @@ class PostController extends ControllerBase
 
     }
 
+    //显示文章
     //edit.php?post_status=trash&post_type=post
     public function showAction()
     {
@@ -43,7 +44,11 @@ class PostController extends ControllerBase
         $post_status = $this->request->getQuery('post_status');
         echo $post_status;
         if($post_status == 'publish'){
-            $posts = WpPosts::find("post_status='publish' and post_type='post'");
+            //$posts = WpPosts::find("post_status='publish' and post_type='post'");
+            $posts = WpPosts::find(array(
+                "post_status='publish' and post_type='post'",
+                "order" => "post_date desc"
+            ));
             //$posts = WpPosts::findFirst();
             $this->view->posts = $posts;
         }elseif($post_status == 'trash'){
@@ -54,6 +59,12 @@ class PostController extends ControllerBase
         }elseif($post_status == 'private'){
             $posts = WpPosts::find("post_status='private' and post_type='post'");
             //$posts = WpPosts::findFirst();
+            $this->view->posts = $posts;
+        }else{
+            $posts = WpPosts::find(array(
+                "post_status='publish' and post_type='post'",
+                "order" => "post_date desc"
+            ));
             $this->view->posts = $posts;
         }
 
@@ -85,15 +96,86 @@ class PostController extends ControllerBase
             ->addJs('ckeditor/ckeditor.js')
             ->addJs('ckeditor/adapters/jquery.js');
 
-        $aa = $this->request->getQuery("aa","int");
-        echo $aa;
+
+        $action = $this->request->getQuery("action","alphanum",null);
+        echo $action;
+        //var_dump($str);
+
 
         if (!$this->request->isPost()) {
+
+            //放到回收站
+            if( $action=='trash'){
+                $post = WpPosts::findFirst($id);
+                if (!$post) {
+                    $this->flash->error("没有这个文章");
+                    return $this->dispatcher->forward(array(
+                        "controller" => "post",
+                        "action" => "show"
+                    ));
+                }
+                $post->post_status = 'trash';
+                if(!$post->update()){
+                    foreach ($post->getMessages() as $message) {
+                        $this->flash->error($message);
+                    }
+
+                }
+                $this->flash->success("已移动1篇文章到回收站。");
+
+
+                return $this->dispatcher->forward(array(
+                    "controller" => "post",
+                    "action" => "show"
+                ));
+            }
+
+            //还原
+            if( $action=='untrash'){
+                $post = WpPosts::findFirst($id);
+                if (!$post) {
+                    $this->flash->error("没有这个文章");
+                    return $this->dispatcher->forward(array(
+                        "controller" => "post",
+                        "action" => "show"
+                    ));
+                }
+                $post->post_status = 'publish';
+                if(!$post->update()){
+                    foreach ($post->getMessages() as $message) {
+                        $this->flash->error($message);
+                    }
+                }
+                //$this->flash->success("1篇文章已从回收站中恢复。");
+                $this->response->redirect("post/show?post_status=trash&post_type=post");
+
+            }
+
+            //永久删除
+            if( $action=='delete'){
+
+                $post = WpPosts::findFirst($id);
+                if (!$post) {
+                    $this->flash->error("没有这个文章");
+                    return $this->dispatcher->forward(array(
+                        "controller" => "post",
+                        "action" => "show"
+                    ));
+                }
+
+                if(!$post->delete()){
+                    foreach ($post->getMessages() as $message) {
+                        $this->flash->error($message);
+                    }
+                }
+                //$this->flash->success("已永久删除1篇文章。");
+                $this->response->redirect("post/show?post_status=trash&post_type=post");
+
+            }
 
             $post = WpPosts::findFirst($id);
             if (!$post) {
                 $this->flash->error("没有这个文章");
-
                 return $this->dispatcher->forward(array(
                     "controller" => "post",
                     "action" => "show"
