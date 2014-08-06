@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f9a52ed-9929-41ab-9f6e-ebfb0ad797ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/controllers/ControllerBase.php" afterPath="$PROJECT_DIR$/back/app/controllers/ControllerBase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/back/app/views/post/tag.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/controllers/PostController.php" afterPath="$PROJECT_DIR$/back/app/controllers/PostController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/views/post/show.volt" afterPath="$PROJECT_DIR$/back/app/views/post/show.volt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/plugins/Security.php" afterPath="$PROJECT_DIR$/back/app/plugins/Security.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/models/WpPosts.php" afterPath="$PROJECT_DIR$/back/app/models/WpPosts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/models/WpTermRelationships.php" afterPath="$PROJECT_DIR$/back/app/models/WpTermRelationships.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/back/app/models/WpUsers.php" afterPath="$PROJECT_DIR$/back/app/models/WpUsers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="git.iws" />
@@ -28,28 +31,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Katniss.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/app/library/Katniss.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="0" selection-start="3445" selection-end="3445" vertical-scroll-proportion="-0.0" vertical-offset="2684" max-vertical-offset="3102">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PostController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/back/app/controllers/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="64" selection-start="5362" selection-end="5362" vertical-scroll-proportion="-5.419355" vertical-offset="3484" max-vertical-offset="10560">
-              <folding />
+            <state line="425" column="0" selection-start="12413" selection-end="12413" vertical-scroll-proportion="0.40700808" vertical-offset="6757" max-vertical-offset="10890">
+              <folding>
+                <element signature="n#saveAction#0;n#PostController#0;n#!!top" expanded="false" />
+                <element signature="n#seeAction#0;n#PostController#0;n#!!top" expanded="false" />
+                <element signature="n#newAction#0;n#PostController#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/app/controllers/SessionController.php">
+      <file leaf-file-name="tag.volt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/back/app/views/post/tag.volt">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2662">
+            <state line="152" column="59" selection-start="6674" selection-end="6674" vertical-scroll-proportion="-9.225806" vertical-offset="3058" max-vertical-offset="4488">
               <folding />
             </state>
           </provider>
@@ -58,19 +59,19 @@
       <file leaf-file-name="Security.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/app/plugins/Security.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="14" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2684">
+            <state line="44" column="133" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2684">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.volt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.volt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/back/app/views/post/show.volt">
           <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="35" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.73111784" vertical-offset="3080" max-vertical-offset="4488">
+            <state line="134" column="13" selection-start="6596" selection-end="6596" vertical-scroll-proportion="0.0" vertical-offset="2860" max-vertical-offset="4290">
               <folding />
             </state>
           </provider>
@@ -82,16 +83,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="4343" selection-end="4343" vertical-scroll-proportion="3.548387" vertical-offset="2398" max-vertical-offset="4532">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WpPosts.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/back/app/models/WpPosts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="7" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="3300">
+            <state line="104" column="0" selection-start="4343" selection-end="4343" vertical-scroll-proportion="0.0" vertical-offset="2398" max-vertical-offset="4532">
               <folding />
             </state>
           </provider>
@@ -103,7 +95,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="61" selection-start="6687" selection-end="6687" vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="4422">
+            <state line="75" column="71" selection-start="3697" selection-end="3741" vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="4422">
               <folding />
             </state>
           </provider>
@@ -124,7 +116,6 @@
       <list>
         <option value="$PROJECT_DIR$/back/README.md" />
         <option value="$PROJECT_DIR$/back/app/models/Users.php" />
-        <option value="$PROJECT_DIR$/back/app/models/WpUsers.php" />
         <option value="$PROJECT_DIR$/back/app/views/admin/register.volt" />
         <option value="$PROJECT_DIR$/back/app/views/index1.volt" />
         <option value="$PROJECT_DIR$/back/app/views/admin/login1.volt" />
@@ -146,10 +137,16 @@
         <option value="$PROJECT_DIR$/back/app/views/post/new2.volt" />
         <option value="$PROJECT_DIR$/back/app/views/post/editor.volt" />
         <option value="$PROJECT_DIR$/back/app/views/post/edit.volt" />
-        <option value="$PROJECT_DIR$/back/app/plugins/Security.php" />
         <option value="$PROJECT_DIR$/back/app/controllers/ControllerBase.php" />
-        <option value="$PROJECT_DIR$/back/app/controllers/PostController.php" />
         <option value="$PROJECT_DIR$/back/app/views/post/show.volt" />
+        <option value="$PROJECT_DIR$/back/app/models/WpUsers.php" />
+        <option value="$PROJECT_DIR$/back/app/models/WpPosts.php" />
+        <option value="$PROJECT_DIR$/back/app/models/WpTermRelationships.php" />
+        <option value="$PROJECT_DIR$/back/app/models/WpTermTaxonomy.php" />
+        <option value="$PROJECT_DIR$/back/app/models/WpTerms.php" />
+        <option value="$PROJECT_DIR$/back/app/plugins/Security.php" />
+        <option value="$PROJECT_DIR$/back/app/views/post/tag.volt" />
+        <option value="$PROJECT_DIR$/back/app/controllers/PostController.php" />
       </list>
     </option>
   </component>
@@ -159,8 +156,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="32" />
+    <option name="x" value="-1" />
+    <option name="y" value="269" />
     <option name="width" value="1434" />
     <option name="height" value="574" />
   </component>
@@ -190,7 +187,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -260,32 +256,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="back" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="session" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,6 +371,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -471,7 +442,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="32" width="1434" height="574" extended-state="0" />
+    <frame x="-1" y="269" width="1434" height="574" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -480,7 +451,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17982456" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25146198" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -516,41 +487,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/back/app/controllers/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="924" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/views/dashboard/index.volt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="2427" selection-end="2427" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="7128" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/views/layouts/admin.volt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="4004">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/public/css/style.default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1457" column="35" selection-start="76889" selection-end="76889" vertical-scroll-proportion="0.0" vertical-offset="31617" max-vertical-offset="35706" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="13" selection-start="3535" selection-end="3535" vertical-scroll-proportion="0.0" vertical-offset="1782" max-vertical-offset="3212">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/models/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="1" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="880" />
@@ -578,9 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/layouts/admin.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="46" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="594">
-          <folding />
-        </state>
+        <state line="6" column="46" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/public/index.php">
@@ -694,14 +628,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/library/Katniss.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="3445" selection-end="3445" vertical-scroll-proportion="0.0" vertical-offset="2684" max-vertical-offset="3102">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/models/WpUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="18" selection-start="1057" selection-end="1057" vertical-scroll-proportion="1.7196765" vertical-offset="528" max-vertical-offset="2068" />
+        <state line="122" column="0" selection-start="3445" selection-end="3445" vertical-scroll-proportion="0.0" vertical-offset="2684" max-vertical-offset="3102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/models/WpUsers.php.bk">
@@ -719,13 +646,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.5498652" vertical-offset="575" max-vertical-offset="946" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/models/WpPosts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="3300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/config/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="15" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550" />
@@ -741,24 +661,12 @@
         <state line="15" column="92" selection-start="489" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1232" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/views/post/new2.volt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="61" selection-start="6687" selection-end="6687" vertical-scroll-proportion="0.0" vertical-offset="3344" max-vertical-offset="4422">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/layouts/admin.volt">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="25" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0" vertical-offset="707" max-vertical-offset="4004">
-          <folding />
-        </state>
+        <state line="48" column="25" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0" vertical-offset="707" max-vertical-offset="4004" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/views/post/editor.volt">
@@ -769,32 +677,14 @@
         <state line="65" column="0" selection-start="3421" selection-end="3421" vertical-scroll-proportion="0.5347432" vertical-offset="1253" max-vertical-offset="4488" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/controllers/SessionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2662">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/plugins/Security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="14" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back/app/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="40" selection-start="746" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="3784">
-          <folding />
-        </state>
+        <state line="34" column="40" selection-start="746" selection-end="778" vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="3784" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="8" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.41389728" vertical-offset="919" max-vertical-offset="3608">
-          <folding />
-        </state>
+        <state line="48" column="8" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.41389728" vertical-offset="919" max-vertical-offset="3608" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/back/app/controllers/ControllerBase.php">
@@ -804,9 +694,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/controllers/PostController.php">
+    <entry file="file://$PROJECT_DIR$/back/app/views/post/show.volt">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="64" selection-start="5362" selection-end="5362" vertical-scroll-proportion="-5.419355" vertical-offset="3484" max-vertical-offset="10560">
+        <state line="134" column="13" selection-start="6596" selection-end="6596" vertical-scroll-proportion="0.0" vertical-offset="2860" max-vertical-offset="4290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="859" selection-end="859" vertical-scroll-proportion="-8.258064" vertical-offset="404" max-vertical-offset="2178" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../phalcon-devtools/ide/1.3.2/Phalcon/Mvc/ViewInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="293" column="24" selection-start="5143" selection-end="5143" vertical-scroll-proportion="0.36253777" vertical-offset="6326" max-vertical-offset="7150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpTermTaxonomy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="63" selection-start="200" selection-end="219" vertical-scroll-proportion="0.5116279" vertical-offset="0" max-vertical-offset="1210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpTerms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="1" selection-start="49" selection-end="49" vertical-scroll-proportion="0.19186047" vertical-offset="0" max-vertical-offset="924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpTermRelationships.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="60" selection-start="250" selection-end="264" vertical-scroll-proportion="0.44767442" vertical-offset="66" max-vertical-offset="902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/models/WpPosts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="63" selection-end="228" vertical-scroll-proportion="0.38372093" vertical-offset="0" max-vertical-offset="3454">
           <folding />
         </state>
       </provider>
@@ -816,18 +749,51 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="4343" selection-end="4343" vertical-scroll-proportion="3.548387" vertical-offset="2398" max-vertical-offset="4532">
+        <state line="104" column="0" selection-start="4343" selection-end="4343" vertical-scroll-proportion="0.0" vertical-offset="2398" max-vertical-offset="4532">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back/app/views/post/show.volt">
+    <entry file="file://$PROJECT_DIR$/back/app/views/post/new2.volt">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="35" selection-start="7537" selection-end="7537" vertical-scroll-proportion="0.73111784" vertical-offset="3080" max-vertical-offset="4488">
+        <state line="75" column="71" selection-start="3697" selection-end="3741" vertical-scroll-proportion="0.0" vertical-offset="1430" max-vertical-offset="4422">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/controllers/SessionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="14" selection-start="341" selection-end="341" vertical-scroll-proportion="1.0634441" vertical-offset="0" max-vertical-offset="2662" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/plugins/Security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="133" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/views/post/tag.volt">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="59" selection-start="6674" selection-end="6674" vertical-scroll-proportion="-9.225806" vertical-offset="3058" max-vertical-offset="4488">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back/app/controllers/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="425" column="0" selection-start="12413" selection-end="12413" vertical-scroll-proportion="0.40700808" vertical-offset="6757" max-vertical-offset="10890">
+          <folding>
+            <element signature="n#saveAction#0;n#PostController#0;n#!!top" expanded="false" />
+            <element signature="n#seeAction#0;n#PostController#0;n#!!top" expanded="false" />
+            <element signature="n#newAction#0;n#PostController#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

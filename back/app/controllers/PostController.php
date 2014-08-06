@@ -327,6 +327,10 @@ class PostController extends ControllerBase
         Tag::setDefault('post_content', 'phalcon');
         Tag::setDefault('setde','ffff');
 
+        //分类目录
+        //$taxonomy = WpTermTaxonomy::find();
+
+
         //echo 'a';
         //echo Tag::friendlyTitle('These are big important news', '-');
     }
@@ -337,15 +341,137 @@ class PostController extends ControllerBase
 
         //echo 'a';
         //echo Tag::friendlyTitle('These are big important news', '-');
+
+        $taxonomys = WpTermTaxonomy::find(array(
+            "taxonomy= 'category'"
+        ));
+        foreach($taxonomys as $taxonomy){
+            echo $taxonomy->WpTerms->name."--".$taxonomy->WpTerms->slug."<br/>";
+        }
+
+
+
+
     }
 
-    public function tagAction($a)
+
+    //文章标签
+    public function tagAction($t="")
     {
         Tag::appendTitle(' | 标签 ');
 
         echo 'a';
         echo Tag::friendlyTitle('These are big important news', '-');
-        echo $a;
+        echo $t."<hr/>";
+        $action = $this->request->getQuery("action","alphanum",null);
+        echo  $action;
+        //tag删除
+        if( $action == 'delete'){
+
+            $tags = WpTerms::findFirst($t);
+            $tagtax = WpTermTaxonomy::findFirst(array(
+                "term_id=:term_id:",
+                "bind" => array("term_id"=> $t)
+            ));
+            if (!$tags) {
+                $this->flash->error("没有这个标签");
+                return $this->dispatcher->forward(array(
+                    "controller" => "post",
+                    "action" => "tag"
+                ));
+            }
+
+            if(!$tagtax->delete()){
+                foreach ($tags->getMessages() as $message) {
+                    $this->flash->error($message);
+                }
+            }
+
+            if(!$tags->delete()){
+                foreach ($tags->getMessages() as $message) {
+                    $this->flash->error($message);
+                }
+            }
+            $this->flash->success("成功删除标签 "."(".$tags->name.")");
+            //$this->response->redirect("post/show?post_status=trash&post_type=post");
+            //$this->forward('post/tags');
+
+        }
+
+
+        $tags = WpTermTaxonomy::find(array("taxonomy='post_tag'"));
+        $this->view->setVar('tags', $tags);
+        //$this->view->tags = $tags;
+        /*foreach($tags as $tag){
+            echo $tag->WpTerms->name.'<br/>';
+        }*/
+
+
+
+
+    }
+
+    //添加文章标签
+    public function tagaddAction()
+    {
+        Tag::appendTitle(' | 标签 ');
+
+        echo 'a';
+        echo Tag::friendlyTitle('These are big important news', '-');
+
+        if($this->request->isPost()) {
+            $tag_name = $this->request->getPost('tag_name');
+            $tag_slug = $this->request->getPost('tag_slug');
+            $tag_desc = $this->request->getPost('tag_desc');
+
+            $newtag = new WpTerms();
+            $newtag->name = $tag_name ? $tag_name : new Phalcon\Db\RawValue("''");;
+            $newtag->slug = $tag_slug ? $tag_slug : new Phalcon\Db\RawValue("''");;
+            $newtag->term_group = 0;
+
+            if($newtag->save() == false){
+                $this->flash->error('添加标签失败');
+                foreach($newtag->getMessages() as $message){
+                    echo $message, "\n";
+                }
+            }
+
+            $term_id = WpTerms::findFirst(array(
+                "name=:name:",
+                "bind" =>array("name" => $tag_name)
+            ));
+            //echo $term_id->term_id;
+
+            $newtags = new WpTermTaxonomy();
+            $newtags->description = $tag_desc ? $tag_desc : new Phalcon\Db\RawValue("''");;
+            $newtags->taxonomy = 'post_tag';
+            $newtags->parent = 0;
+            $newtags->count = 0;
+            $newtags->term_id = $term_id->term_id;
+
+            if($newtags->save() == false) {
+                $this->flash->error('添加标签失败!');
+                foreach ($newtags->getMessages() as $message) {
+                    echo $message, "\n";
+                }
+                //$this->forward('post/tag');
+            }
+
+
+            //$this->flash->success('标签添加成功');
+            return $this->dispatcher->forward(array(
+                "controller" => "post",
+                "action" => "tag"
+            ));
+        }
+
+        return $this->dispatcher->forward(array(
+            "controller" => "post",
+            "action" => "show"
+        ));
+
+
+
     }
 
     public function fileAction()

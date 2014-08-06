@@ -3,6 +3,13 @@
 class WpPosts extends \Phalcon\Mvc\Model
 {
 
+    //a
+    public function initialize()
+    {
+        $this->belongsTo("post_author", "WpUsers", "ID");
+        $this->hasMany("ID", "WpTermRelationships", "object_id");
+    }
+
     /**
      *
      * @var integer
