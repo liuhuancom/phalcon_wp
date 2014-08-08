@@ -87,6 +87,7 @@ class PostController extends ControllerBase
 
     }
 
+
     //编辑
     public function editAction($id)
     {
@@ -425,8 +426,8 @@ class PostController extends ControllerBase
             $tag_desc = $this->request->getPost('tag_desc');
 
             $newtag = new WpTerms();
-            $newtag->name = $tag_name ? $tag_name : new Phalcon\Db\RawValue("''");;
-            $newtag->slug = $tag_slug ? $tag_slug : new Phalcon\Db\RawValue("''");;
+            $newtag->name = $tag_name ? $tag_name : new Phalcon\Db\RawValue("''");
+            $newtag->slug = $tag_slug ? $tag_slug : new Phalcon\Db\RawValue("''");
             $newtag->term_group = 0;
 
             if($newtag->save() == false){
@@ -443,7 +444,7 @@ class PostController extends ControllerBase
             //echo $term_id->term_id;
 
             $newtags = new WpTermTaxonomy();
-            $newtags->description = $tag_desc ? $tag_desc : new Phalcon\Db\RawValue("''");;
+            $newtags->description = $tag_desc ? $tag_desc : new Phalcon\Db\RawValue("''");
             $newtags->taxonomy = 'post_tag';
             $newtags->parent = 0;
             $newtags->count = 0;

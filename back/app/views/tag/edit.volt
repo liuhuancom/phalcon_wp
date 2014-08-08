@@ -1,6 +1,6 @@
 
-{# assets.outputJs('post_show') #}
-{# assets.outputCss('post_show') #}
+{{ assets.outputJs('tag_edit') }}
+{{ assets.outputCss('tag_edit') }}
 
 
 <!-- START OF RIGHT PANEL -->
@@ -81,24 +81,32 @@
 
                 <div class="liu">
 
-                 {{ form("post/tagadd", "method":"post") }}
+                 {{ form("tag/save", "method":"post") }}
 
                 <p>
                    	<label>名称</label>
-                       <span class="field"><input type="text" name="tag_name" class="input-medium" placeholder="文章"></span>
+                       <span class="field">
+                       {{ text_field('tag_name','class':'input-medium') }}
+                       </span>
                 </p>
                 <p>
                    <label>别名</label>
-                       <span class="field"><input type="text" name="tag_slug" class="input-medium" placeholder="好文章"></span>
+                       <span class="field">
+                       {{ text_field('tag_slug','class':'input-medium') }}
+                       </span>
                 </p>
                 <p>
                    <label>描述</label>
-                       <span class="field"><textarea name="tag_desc" cols="80" rows="5" class="span5"></textarea></span>
+                       <span class="field">
+
+                       {{ text_area('tag_desc') }}
+                       </span>
                 </p>
                 <p class="stdformbutton">
                    <button class="btn btn-primary">Submit Button</button>
                    <button type="reset" class="btn">Reset Form</button>
                 </p>
+                {{ hidden_field('term_id') }}
                 </form>
                 </div>
 
@@ -144,11 +152,9 @@
                                 <div class="row-actions">
 
                                  <span class="edit">
-                                    {{ link_to("tag/edit/"~taga.term_id, "编辑") }} | </span>
-                                    <span class="edit">
-                                     <a href="javascript:void(0)" onclick="window.open('{{url('tag/edit/'~taga.term_id~'?action=edit')}}','','width=780,height=550')" target="_blank">编辑</a> | </span>
+                                    {{ link_to("tag/edit/"~taga.term_id~"?action=edit", "编辑") }} | </span>
 
-                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('tag/edit/'~taga.term_id~'?action=delete') }}">删除</a> | </span>
+                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('tag/tag/'~taga.term_id~'?action=delete') }}">删除</a> | </span>
                                     <span class="view">{{ link_to("post/see/"~taga.term_id, "查看","target":"_blank") }}</span>
                                 </div>
 

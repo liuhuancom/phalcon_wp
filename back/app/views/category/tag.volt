@@ -144,11 +144,11 @@
                                 <div class="row-actions">
 
                                  <span class="edit">
-                                    {{ link_to("tag/edit/"~taga.term_id, "编辑") }} | </span>
+                                    {{ link_to("post/edit/"~taga.term_id, "编辑") }} | </span>
                                     <span class="edit">
-                                     <a href="javascript:void(0)" onclick="window.open('{{url('tag/edit/'~taga.term_id~'?action=edit')}}','','width=780,height=550')" target="_blank">编辑</a> | </span>
+                                     <a href="javascript:void(0)" onclick="window.open('{{url('aa')}}','','width=780,height=550')" target="_blank">编辑</a> | </span>
 
-                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('tag/edit/'~taga.term_id~'?action=delete') }}">删除</a> | </span>
+                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('post/tag/'~taga.term_id~'?action=delete') }}">删除</a> | </span>
                                     <span class="view">{{ link_to("post/see/"~taga.term_id, "查看","target":"_blank") }}</span>
                                 </div>
 

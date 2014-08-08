@@ -38,8 +38,8 @@
                 	<ul>
                     	<li><a href="{{ url('post/show') }}">所有文章</a></li>
                         <li><a href="{{ url('post/new2') }}">写文章</a></li>
-                        <li><a href="{{ url('post/category') }}">分类目录</a></li>
-                        <li><a href="{{ url('post/tag') }}">标签</a></li>
+                        <li><a href="{{ url('category/show') }}">分类目录</a></li>
+                        <li><a href="{{ url('tag/show') }}">标签</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href=""><span class="icon-th-list"></span> Tables</a>

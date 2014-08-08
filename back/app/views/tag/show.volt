@@ -1,6 +1,6 @@
 
-{# assets.outputJs('post_show') #}
-{# assets.outputCss('post_show') #}
+{{ assets.outputJs('tag_show') }}
+{{ assets.outputCss('tag_show') }}
 
 
 <!-- START OF RIGHT PANEL -->
@@ -81,7 +81,7 @@
 
                 <div class="liu">
 
-                 {{ form("post/tagadd", "method":"post") }}
+                 {{ form("tag/add", "method":"post") }}
 
                 <p>
                    	<label>名称</label>
@@ -144,7 +144,7 @@
                                 <div class="row-actions">
 
                                  <span class="edit">
-                                    {{ link_to("tag/edit/"~taga.term_id, "编辑") }} | </span>
+                                    {{ link_to("tag/edit/"~taga.term_id~"?action=edit", "编辑") }} | </span>
                                     <span class="edit">
                                      <a href="javascript:void(0)" onclick="window.open('{{url('tag/edit/'~taga.term_id~'?action=edit')}}','','width=780,height=550')" target="_blank">编辑</a> | </span>
 

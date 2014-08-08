@@ -1,6 +1,6 @@
 
-{# assets.outputJs('post_show') #}
-{# assets.outputCss('post_show') #}
+{{ assets.outputJs('category_show') }}
+{{ assets.outputCss('category_show') }}
 
 
 <!-- START OF RIGHT PANEL -->
@@ -74,14 +74,14 @@
         	    {{ content() }}
 
 
-            	<h4 class="widgettitle">Dynamic Table</h4>
+            	<h4 class="widgettitle">分类目录</h4>
 
 
                 <div class="divider10"></div>
 
                 <div class="liu">
 
-                 {{ form("post/tagadd", "method":"post") }}
+                 {{ form("category/add", "method":"post") }}
 
                 <p>
                    	<label>名称</label>
@@ -92,11 +92,29 @@
                        <span class="field"><input type="text" name="tag_slug" class="input-medium" placeholder="好文章"></span>
                 </p>
                 <p>
+                    <label>父级</label>
+                        <span class="field">
+                        {{ select('productId', parents, 'using': ['id', 'description'],
+                                            'useEmpty': true, 'emptyText': 'Please, choose one...', 'emptyValue': '@') }}
+
+                        </span>
+                </p>
+
+                <p>
+                     <label>父级</label>
+                         <span class="field">
+                                        {{ select('parent', parentsarrs, 'using': ['id', 'description'],
+                                                            'useEmpty': true, 'emptyText': '无分类', 'emptyValue': '0') }}
+
+                         </span>
+                </p>
+
+                <p>
                    <label>描述</label>
                        <span class="field"><textarea name="tag_desc" cols="80" rows="5" class="span5"></textarea></span>
                 </p>
                 <p class="stdformbutton">
-                   <button class="btn btn-primary">Submit Button</button>
+                   <button class="btn btn-primary">添加新的分类目录</button>
                    <button type="reset" class="btn">Reset Form</button>
                 </p>
                 </form>
@@ -132,7 +150,7 @@
 
 
                         {% set i=0 %}
-                        {% for taga in tags %}
+                        {% for category in categorys %}
 
 
                         <tr class="gradeA">
@@ -140,22 +158,20 @@
                             <input type="checkbox" name="post_id" value="{{ post.ID }}" />
                           </span></td>
                             <td>{% set i+=1%}{{i}}</td>
-                            <td>{{ taga.WpTerms.name }}
+                            <td>{{ category.WpTerms.name }}
                                 <div class="row-actions">
 
                                  <span class="edit">
-                                    {{ link_to("tag/edit/"~taga.term_id, "编辑") }} | </span>
-                                    <span class="edit">
-                                     <a href="javascript:void(0)" onclick="window.open('{{url('tag/edit/'~taga.term_id~'?action=edit')}}','','width=780,height=550')" target="_blank">编辑</a> | </span>
+                                    {{ link_to("category/edit/"~category.term_id~"?action=edit", "编辑") }} | </span>
 
-                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('tag/edit/'~taga.term_id~'?action=delete') }}">删除</a> | </span>
-                                    <span class="view">{{ link_to("post/see/"~taga.term_id, "查看","target":"_blank") }}</span>
+                                    <span class="trash"><a class="submitdelete" title="删除" href="{{ url('category/edit/'~category.term_id~'?action=delete') }}">删除</a> | </span>
+                                    <span class="view">{{ link_to("post/see/"~category.term_id, "查看","target":"_blank") }}</span>
                                 </div>
 
                             </td>
-                            <td>{{ taga.description }}</td>
-                            <td>{{ taga.WpTerms.slug }}</td>
-                            <td>{{ taga.count }}</td>
+                            <td>{{ category.description }}</td>
+                            <td>{{ category.WpTerms.slug }}</td>
+                            <td>{{ category.count }}</td>
 
                         </tr>
                         {% endfor %}
@@ -187,6 +203,24 @@
    				{{ content() }}
    				<hr/>
    				</pre>
+
+   				<div class="divider15"></div>
+   				<div>
+   				<?php
+   				echo $this->tag->select(
+                    array(
+                        "productId",
+                        WpTerms::find("term_group = 0"),
+                        "using" => array("id", "name")
+                    )
+                );
+   				?>
+   				</div>
+   				<div>
+   				{{ select('productId', term, 'using': ['term_id', 'slug'],
+                    'useEmpty': true, 'emptyText': 'Please, choose one...', 'emptyValue': '@') }}
+   				</div>
+
 
 
 
