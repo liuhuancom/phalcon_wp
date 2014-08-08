@@ -42,7 +42,7 @@ class Security extends Plugin
 				'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 				'invoices' => array('index', 'profile'),
                 'dashboard' => array('index', 'profile'),
-                'post' => array('index', 'show', 'edit', 'save', 'see', 'new', 'new2', 'newpost', 'tmppost', 'category', 'tag', 'tags', 'tagadd', 'file'),
+                'post' => array('index', 'show', 'add', 'edit', 'save', 'savenew', 'see', 'new', 'new2', 'newpost', 'tmppost', 'phql', 'gettag', 'category', 'tag', 'tags', 'tagadd', 'file'),
                 'category' => array('index', 'show', 'edit', 'save', 'see', 'new', 'new2', 'newpost', 'tmppost', 'category', 'tag', 'tags', 'add', 'file'),
                 'tag' => array('index', 'show', 'edit', 'save', 'see', 'new', 'new2', 'newpost', 'tmppost', 'category', 'tag', 'tags', 'add', 'file')
 			);

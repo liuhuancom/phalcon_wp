@@ -148,6 +148,10 @@ error_reporting(E_ALL);
         return new Katniss();
     });
 
+    $di->set('modelsManager',function(){
+        return new Phalcon\Mvc\Model\Manager();
+    });
+
 	$application = new \Phalcon\Mvc\Application();
 	$application->setDI($di);
 	echo $application->handle()->getContent();

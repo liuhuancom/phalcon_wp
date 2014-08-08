@@ -1,6 +1,7 @@
 <?php
 
 use Phalcon\Tag as Tag;
+use Phalcon\Mvc\Model\Query as Query;
 
 class PostController extends ControllerBase
 {
@@ -87,6 +88,100 @@ class PostController extends ControllerBase
 
     }
 
+    //添加文章
+    public function addAction()
+    {
+        Tag::appendTitle(' | 添加文章 ');
+        $this->assets->collection('new_post')
+            ->addJs('js/colorpicker.js')
+            ->addJs('ckeditor/ckeditor.js')
+            ->addJs('ckeditor/adapters/jquery.js');
+
+
+        Tag::setDefault('post_title', '');
+        Tag::setDefault('post_content', 'phalcon');
+        Tag::setDefault('setde','ffff');
+        //文章的分类
+        $this->view->parents = $this->categoryParent();
+
+        //分类目录
+        //$taxonomy = WpTermTaxonomy::find();
+
+        //echo 'a';
+        //echo Tag::friendlyTitle('These are big important news', '-');
+    }
+
+    //添加新文章保存
+    public function savenewAction()
+    {
+        if($this->request->isPost()) {
+            $title = $this->request->getPost('post_title');
+            $content = $this->request->getPost('post_content');
+            //文章分类单选
+            $parent = $this->request->getPost('parent');
+            $term_taxonomy_id = WpTermTaxonomy::findFirst(array(
+                "term_id=:term_id: and taxonomy = 'category'",
+                "bind" => array("term_id"=>$parent)
+            ));
+
+            $newpost = new WpPosts();
+            $newpost->post_title = $title;
+            $newpost->post_content = $content;
+            $newpost->post_content_filtered = 'a';
+            //$newpost->post_date = '2014-06-27 18:36:58.000000';
+            $newpost->post_date = date('Y-m-d H:i:s');
+            $newpost->post_date_gmt = date('Y-m-d H:i:s');
+            $newpost->post_excerpt = new Phalcon\Db\RawValue("''");
+            $newpost->post_modified = date('Y-m-d H:i:s');
+            $newpost->post_modified_gmt = date('Y-m-d H:i:s');
+            $newpost->post_name = $title;
+            $newpost->post_password = new Phalcon\Db\RawValue("''");
+            $newpost->post_status = 'publish';
+            $newpost->comment_count = 0;
+            $newpost->comment_status = 'open';  //open
+            $newpost->post_author = '1';        //1
+            $newpost->ping_status = 'open';
+            $newpost->to_ping = new Phalcon\Db\RawValue("''");
+            $newpost->pinged = new Phalcon\Db\RawValue("''");
+            $newpost->post_content_filtered = new Phalcon\Db\RawValue("''");
+            $newpost->post_parent = '0';
+            $newpost->guid = 'aa';
+            $newpost->menu_order = '0';         //0
+            $newpost->post_type = 'post';
+            $newpost->post_mime_type = new Phalcon\Db\RawValue("''");
+
+            if($newpost->save() == false) {
+                $this->flash->error('添加失败!');
+                foreach ($newpost->getMessages() as $message) {
+                    echo $message, "\n";
+                }
+                //$this->forward('post/new');
+            }
+
+            $post_category = new WpTermRelationships();
+            $post_category->object_id = $newpost->ID;
+            $post_category->term_taxonomy_id = $term_taxonomy_id->term_taxonomy_id;
+            $post_category->term_order = 0;
+
+            if($post_category->save() == false) {
+                $this->flash->error('添加分类失败!');
+                foreach ($post_category->getMessages() as $message) {
+                    echo $message, "\n";
+                }
+                //$this->forward('post/new');
+            }
+
+
+
+
+            $this->flash->success('添加成功');
+            $this->forward('post/add');
+        }
+
+        //$this->forward('post/new');
+        $this->response->redirect('post/add');
+
+    }
 
     //编辑
     public function editAction($id)
@@ -189,6 +284,7 @@ class PostController extends ControllerBase
             $this->tag->setDefault("id", $post->ID);
             $this->tag->setDefault("post_title", $post->post_title);
             $this->tag->setDefault("post_content", $post->post_content);
+            $this->tag->setDefault("parent", $post->post_content);
             //$this->tag->setDefault("year", $post->year);
 
         }
@@ -240,11 +336,6 @@ class PostController extends ControllerBase
         if($post->post_mime_type == ''){
             $post->post_mime_type = new Phalcon\Db\RawValue("''");
         }
-
-
-
-
-
 
 
         if (!$post->update()) {
@@ -566,10 +657,61 @@ class PostController extends ControllerBase
 
     }
 
-    public function tmppostAction()
+    public function phqlAction()
+    {
+        /*$phql = "SELECT * FROM WpPosts";
+        $query = new Query($phql);
+        $posts = $query->execute();*/
+        $phql = "SELECT * FROM WpTermRelationships as wtr join WpTermTaxonomy as wtt where object_id = 60";
+        $posts = $this->modelsManager->executeQuery($phql);
+        foreach($posts as $post){
+            //echo $post->WpTermRelationships->WpTermTaxonomy->taxonomy.'<br/>';
+            echo $post->wtr->term_taxonomy.'<br/>';
+        }
+
+
+    }
+
+    public function gettagAction($id)
+    {
+        $posts = WpPosts::findFirst($id);
+        //$tag = $posts->WpTermRelationships->getWpTermTaxonomy("taxonomy='post_tag'");
+        foreach($posts->WpTermRelationships as $tag){
+
+            echo $tag->getWpTermTaxonomy("taxonomy='post_tag'")->name;
+        }
+
+    }
+
+    public function tmppostAction($id)
     {
 
-        if($this->request->isPost()) {
+        $posts = WpTermRelationships::find(array(
+            "object_id = :id:",
+            "bind" => array("id"=>$id)
+        ))->filter(function($id){
+                echo $id->WpTermTaxonomy->taxonomy;
+                echo $id->WpTermTaxonomy->WpTerms->name.'<br/>';
+                if($id->WpTermTaxonomy->taxonomy =='post_tag'){//category post_tag
+                    return $id;
+                }
+        });
+        foreach($posts as $post){
+            echo $post->WpTermTaxonomy->WpTerms->name;
+        }
+
+        /*foreach($post as $wtt){
+
+                echo $wtt->term_taxonomy_id.'<br/>';
+                echo $wtt->WpTermTaxonomy->WpTerms->name.'<br/>';
+                echo $wtt->getwptermtaxonomy(array("taxonomy='category'"))->WpTerms->name.'<br/>';
+        }*/
+        $phql = "";
+
+
+
+
+        /*if($this->request->isPost()) {
             $title = $this->request->getPost('post_title');
             $content = $this->request->getPost('post_content');
 
@@ -590,7 +732,21 @@ class PostController extends ControllerBase
             //$this->forward('post/index');
         }
 
-        //$this->forward('post/new');
+        //$this->forward('post/new');*/
+
+    }
+
+    //以下为内部方法
+    //全部的分类
+    public function categoryParent(){
+        $parents = WpTermTaxonomy::find(array("taxonomy='category'","order"=>"parent"));
+        $parentsarr = [];
+        foreach($parents as $parent){
+            //echo $parent->WpTerms->name;
+            $a = $parent->description?'&nbsp&nbsp->&nbsp':'';
+            $parentsarr[$parent->WpTerms->term_id] = $parent->WpTerms->name.'('.$parent->WpTerms->slug.')'.$a.$parent->description;
+        }
+        return $parentsarr;
 
     }
 
