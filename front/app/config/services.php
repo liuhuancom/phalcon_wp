@@ -8,6 +8,11 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
+use Phalcon\Events\Manager;
+//use Phalcon\Logger as lg;
+//use Phalcon\Logger as lg;
+use Phalcon\Logger\Adapter\File as Logger;
+
 /**
  * The FactoryDefault Dependency Injector automatically register the right services providing a full stack framework
  */
@@ -53,7 +58,7 @@ $di->set('view', function () use ($config) {
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
-$di->set('db', function () use ($config) {
+/*$di->set('db', function () use ($config) {
     return new DbAdapter(array(
         'host' => $config->database->host,
         'username' => $config->database->username,
@@ -61,7 +66,36 @@ $di->set('db', function () use ($config) {
         'dbname' => $config->database->dbname,
         'charset' => 'utf8'
     ));
+});*/
+
+$di->set('db', function () use ($config) {
+    $eventsManager = new Manager();
+    //$logger = new File("debug.log");
+    //$logger = new File(__DIR__ . "/debug.log");
+    $logger = new Logger(__DIR__ . "/debug.log");
+    var_dump($logger);
+    //$logger = new Logger("app/logs/debug.log");
+    $eventsManager->attach('db', function($event, $connection) use ($logger) {
+        if ($event->getType() == 'beforeQuery') {
+            //$logger->log($connection->getSQLStatement(), Logger::INFO);
+            $logger->log($connection->getSQLStatement(), Logger::INFO);
+
+        }
+    });
+    $connection = new DbAdapter(array(
+        'host' => $config->database->host,
+        'username' => $config->database->username,
+        'password' => $config->database->password,
+        'dbname' => $config->database->dbname,
+        'charset' => 'utf8'
+    ));
+    //Assign the eventsManager to the db adapter instance
+    $connection->setEventsManager($eventsManager);
+
+    return $connection;
+
 });
+
 
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise

@@ -94,7 +94,7 @@
       <link rel="stylesheet" type="text/css" href="lg_Page/Css/Page.css">
 <ul>
 
-
+<?php echo $this->getContent(); ?>
 <?php foreach ($posts as $p) { ?>
 
 <li> 1&nbsp;&nbsp;<a href="news/info/<?php echo $p->ID; ?>" target="_blank"><?php echo $p->post_title; ?></a>

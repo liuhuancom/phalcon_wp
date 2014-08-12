@@ -102,7 +102,7 @@
       <link rel="stylesheet" type="text/css" href="lg_Page/Css/Page.css">
 <ul>
 
-
+{{ content() }}
 {% for p in posts %}
 
 <li> 1&nbsp;&nbsp;<a href="news/info/{{ p.ID }}" target="_blank">{{ p.post_title }}</a>
