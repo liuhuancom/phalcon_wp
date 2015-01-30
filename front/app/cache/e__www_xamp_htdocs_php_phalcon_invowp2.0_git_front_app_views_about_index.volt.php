@@ -109,25 +109,21 @@
 
 </ul>
 
-<div>
-<div class="page" style="padding-left:500px">
 <a href="news<?php if ($cat) { ?>?cat=<?php echo $cat; ?><?php } ?>">首页</a>
 <a href="news?page=<?= $posts->before; ?><?php if ($cat) { ?>&cat=<?php echo $cat; ?><?php } ?>">上一页</a>
 
-<?php if (!($posts->current == $posts->total_pages)) { ?>
-<a href="news?page=<?= $posts->next; ?><?php if ($cat) { ?>&cat=<?php echo $cat; ?><?php } ?>">下一页</a>
 
+
+
+<a href="news?page=<?= $posts->next; ?><?php if ($cat) { ?>&cat=<?php echo $cat; ?><?php } ?>">下一页</a>
 <a href="news?page=<?= $posts->last; ?><?php if ($cat) { ?>&cat=<?php echo $cat; ?><?php } ?>">尾页</a>
-<?php } ?>
 
 <?php echo "一共 ", $posts->current, " / ", $posts->total_pages;  ?>
-</div>
-</div>
 
 
 
 
-<!--
+
 <table cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td height="30" align="center" style="font-size:12px;"><br><div class="sabrosus" style="font-family:&quot;宋体&quot;;color:#ddd"><span class="disabled">1-15/147 记录</span><span class="disabled">1/10 页</span><span class="disabled">首页</span><span class="disabled">上一页</span><span class="current">1</span><a href="/news_list.php?page=2">2</a><a href="/news_list.php?page=3">3</a><a href="/news_list.php?page=4">4</a><a href="/news_list.php?page=5">5</a><a href="/news_list.php?page=6">6</a><a href="/news_list.php?page=7">7</a><a href="/news_list.php?page=8">8</a><a href="/news_list.php?page=9">9</a><a href="/news_list.php?page=10">10</a><a href="/news_list.php?page=2">下一页</a><a href="/news_list.php?page=10">尾页</a>跳至<select name="topage" size="1" onchange="window.location=&quot;/news_list.php?page=&quot;+this.value">
 <option value="1" selected="">1</option>
 <option value="2">2</option>
@@ -140,9 +136,6 @@
 <option value="9">9</option>
 <option value="10">10</option>
 </select>页</div></td></tr></tbody></table>
--->
-
-
     </section>
   </section>
   <div style="clear:both;"></div>

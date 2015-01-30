@@ -57,8 +57,10 @@ class CategoryController extends ControllerBase
         }
         //$parent = $parents->WpTerms->name;
         //var_dump($parentsarr);
-        $this->view->parentsarrs = $parentsarr;
+        //$this->view->parentsarrs = $parentsarr;
+        $this->view->parentsarrs = $this->categoryParent();
         $this->view->parents =$parents;
+
 
 
 
@@ -481,7 +483,7 @@ class CategoryController extends ControllerBase
         foreach($parents as $parent){
             //echo $parent->WpTerms->name;
             $a = $parent->description?'&nbsp&nbsp->&nbsp':'';
-            $parentsarr[$parent->WpTerms->term_id] = $parent->WpTerms->name.'('.$parent->WpTerms->slug.')'.$a.$parent->description;
+            $parentsarr[$parent->WpTerms->term_id] = '('.$parent->term_id.')'.$parent->WpTerms->name.'('.$parent->WpTerms->slug.')'.$a.$parent->description;
         }
         return $parentsarr;
 

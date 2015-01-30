@@ -95,18 +95,24 @@
     <!-- 文章 -->
 
     <article class="abs">
-    				<h2>周艺平总经理一行莅临我社调研半年工作</h2>
+    				<h2>{{ posts.post_title }}</h2>
     				<p class="tip2">
     					<span>发布时间：2014年06月30</span>
     					<span>来源：本社</span>
-    					<span>作者：综合部</span>
+    					<span>作者：{{ user }}</span>
                         <span>点击量：191次</span>
     				</p>
 
 
-
 {{ content() }}
 {{ posts.post_content }}
+
+{% if auth %}
+<br/><br/>
+<a href="{{ url("../back/post/edit/"~posts.ID) }}" target="_blank">编辑</a>
+<hr/>
+{% endif %}
+
 
 {# 文章 #}
 

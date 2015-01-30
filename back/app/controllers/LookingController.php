@@ -3,7 +3,7 @@
 use Phalcon\Tag as Tag;
 use Phalcon\Mvc\Model\Query as Query;
 
-class PostController extends ControllerBase
+class LookingController extends ControllerBase
 {
     public function initialize()
     {
@@ -689,53 +689,24 @@ class PostController extends ControllerBase
     public function tmppostAction($id)
     {
 
-        $posts = WpTermRelationships::find(array(
-            "object_id = :id:",
-            "bind" => array("id"=>$id)
-        ))->filter(function($id){
-                echo $id->WpTermTaxonomy->taxonomy;
-                echo $id->WpTermTaxonomy->WpTerms->name.'<br/>';
-                if($id->WpTermTaxonomy->taxonomy =='post_tag'){//category post_tag
-                    return $id;
-                }
-        });
-        foreach($posts as $post){
-            echo $post->WpTermTaxonomy->WpTerms->name;
+        //$posts = WpTermTaxonomy::findFirst($id);
+
+        $post = WpTermRelationships::find(array("term_taxonomy_id=$id"));
+        foreach($post as $p){
+            echo $p->WpPosts->post_title.'<br>';
         }
+        //WpTermRelationships::
+        //WpTermTaxonomy::
+        //WpTerms::
+        //$pn = $posts->WpTermRelationships->WpTermTaxonomy;
+        //echo
+        /*$en = base64_encode($id);
+        $de = base64_decode($en);
+        echo $en.'<hr>';
+        echo $de;*/
+        //var_dump($posts->WpTerms->name);
 
-        /*foreach($post as $wtt){
 
-                echo $wtt->term_taxonomy_id.'<br/>';
-                echo $wtt->WpTermTaxonomy->WpTerms->name.'<br/>';
-                echo $wtt->getwptermtaxonomy(array("taxonomy='category'"))->WpTerms->name.'<br/>';
-        }*/
-        $phql = "";
-
-
-
-
-        /*if($this->request->isPost()) {
-            $title = $this->request->getPost('post_title');
-            $content = $this->request->getPost('post_content');
-
-            $newpost = new Tmp();
-            //$newpost->name = $title;
-            $newpost->name = '';
-            $newpost->info = $content;
-
-            if($newpost->create() == false) {
-                $this->flash->success('添加失败!');
-                foreach ($newpost->getMessages() as $message) {
-                    echo $message, "\n";
-                }
-                //$this->forward('post/new');
-                //echo 'no';
-            }
-
-            //$this->forward('post/index');
-        }
-
-        //$this->forward('post/new');*/
 
     }
 

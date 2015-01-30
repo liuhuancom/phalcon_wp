@@ -28,6 +28,7 @@ class WpUsers extends \Phalcon\Mvc\Model
     public function initialize()
     {
         $this->hasMany("ID","WpPosts","post_author");
+        $this->hasMany("ID","WpUsermeta","user_id");
     }
 
 

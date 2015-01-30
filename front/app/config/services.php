@@ -10,7 +10,7 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
 
 use Phalcon\Events\Manager;
 //use Phalcon\Logger as lg;
-//use Phalcon\Logger as lg;
+use Phalcon\Logger as lg;
 use Phalcon\Logger\Adapter\File as Logger;
 
 /**
@@ -72,13 +72,13 @@ $di->set('db', function () use ($config) {
     $eventsManager = new Manager();
     //$logger = new File("debug.log");
     //$logger = new File(__DIR__ . "/debug.log");
-    $logger = new Logger(__DIR__ . "/debug.log");
-    var_dump($logger);
+    $logger = new Logger(__DIR__ . "../../logs/debug.log");
+    //var_dump($logger);
     //$logger = new Logger("app/logs/debug.log");
     $eventsManager->attach('db', function($event, $connection) use ($logger) {
         if ($event->getType() == 'beforeQuery') {
             //$logger->log($connection->getSQLStatement(), Logger::INFO);
-            $logger->log($connection->getSQLStatement(), Logger::INFO);
+            $logger->log($connection->getSQLStatement(), Lg::INFO);
 
         }
     });

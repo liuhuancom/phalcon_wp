@@ -87,18 +87,24 @@
     <!-- 文章 -->
 
     <article class="abs">
-    				<h2>周艺平总经理一行莅临我社调研半年工作</h2>
+    				<h2><?php echo $posts->post_title; ?></h2>
     				<p class="tip2">
     					<span>发布时间：2014年06月30</span>
     					<span>来源：本社</span>
-    					<span>作者：综合部</span>
+    					<span>作者：<?php echo $user; ?></span>
                         <span>点击量：191次</span>
     				</p>
 
 
-
 <?php echo $this->getContent(); ?>
 <?php echo $posts->post_content; ?>
+
+<?php if ($auth) { ?>
+<br/><br/>
+<a href="<?php echo $this->url->get('../back/post/edit/' . $posts->ID); ?>" target="_blank">编辑</a>
+<hr/>
+<?php } ?>
+
 
 
 

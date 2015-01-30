@@ -1,6 +1,6 @@
 
 		<section class="section1">
-			<h1><a href="hbjy/img/湖北教育出版社.htm">湖北教育出版社|崇尚创新、追求卓越</a></h1>
+			<h1><a href="index">湖北教育出版社|崇尚创新、追求卓越</a></h1>
 			<p>
 				<a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a>
 				|
@@ -17,14 +17,14 @@
 		</section>
 		<nav class="nav">
 			<ul>
-				<li class="nav_c"><a href="hbjy/img/湖北教育出版社.htm">首页</a></li>
+				<li class="nav_c"><a href="{{ url('index') }}">首页</a></li>
 				<li class="nav_b"></li>
 				<li class="nav_c">
-					<a href="http://www.hbedup.com/news_list.php">新闻</a>
+					<a href="news">新闻</a>
 					<div class="menu1">
 						<div class="menu1LR menu1L"></div>
 						<div class="menu1LR menu1R"></div>
-                        <a href="http://www.hbedup.com/news_list.php?Class_Fid=9&Class_Type=0&Class_ID=11">本社新闻</a>
+                        <a href="news">本社新闻</a>
 <a href="http://www.hbedup.com/news_list.php?Class_Fid=9&Class_Type=0&Class_ID=10">媒体聚焦</a>
 <a href="http://www.hbedup.com/news_list.php?Class_Fid=9&Class_Type=0&Class_ID=221">行业动态</a>
 <a href="http://www.hbedup.com/news_list.php?Class_Fid=9&Class_Type=0&Class_ID=226">精彩书评</a>

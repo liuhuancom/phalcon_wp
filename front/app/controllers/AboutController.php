@@ -3,7 +3,7 @@
 use Phalcon\Tag as Tag,
     Phalcon\Mvc\View;
 
-class NewsController extends ControllerBase
+class AboutController extends ControllerBase
 {
     public function initialize()
     {
